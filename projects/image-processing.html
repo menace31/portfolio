@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="../images/profil.jpg" />
-  <title data-i18n="project_title_img">Projet de Traitement d'Images</title>
-  <meta name="description" content="Développement d'algorithmes de traitement d'images dans le cadre d'un projet open source." />
+  <title data-i18n="project_title_img"></title>
+  <meta name="description" content="Projet de segmentation d'images utilisant U-Net et MobileNetV2 pour créer des masques binaires de silhouettes de chats et chiens." />
   <link rel="stylesheet" href="../styles.css" />
   <script src="../project-page.js" defer></script>
 </head>
@@ -14,7 +14,7 @@
     <div class="container">
       <nav class="main-nav">
         <a href="../index.html" class="btn-back">
-          <span data-i18n="btn_back">← Retour</span>
+          <span data-i18n="btn_back"></span>
         </a>
       </nav>
       <div class="controls">
@@ -28,65 +28,94 @@
     <div class="container">        
       <article class="project-article">
         <header class="project-header">
-          <img class="project-hero" src="../images/image_processing.png" alt="Image Processing Project" />
-          <h1 data-i18n="project_title_img">Projet de Traitement d'Images</h1>
+          <img class="project-hero" src="../images/image_processing.png" alt="Image Segmentation Project" />
+          <h1 data-i18n="project_title_img"></h1>
           <div class="project-actions">
-            <a href="../report/image_processing.pdf" class="btn btn-primary" target="_blank" data-i18n="view_report">Voir le rapport</a>
-            <a href="#" class="btn btn-secondary" data-i18n="view_code">Code source</a>
+            <a href="../report/image_processing.pdf" class="btn" target="_blank" data-i18n="view_report"></a>
+            <a href="https://github.com/mdevillet/image-segmentation" class="btn" target="_blank" data-i18n="btn_code"></a>
           </div>
         </header>
 
-        <div class="project-content">
-          <section class="project-section">
-                <h2 data-i18n="description">Description</h2>
-                <p data-i18n="project_description_img">
-                    Développement d'algorithmes de traitement d'images dans le cadre d'un projet open source. 
-                    Ce projet explore différentes techniques de filtrage, de segmentation et d'amélioration d'images 
-                    en utilisant des approches modernes de traitement du signal.
-                </p>
-            </section>
+        <section class="project-content">
+          <!-- Description -->
+          <div class="project-section">
+            <p data-i18n="project_description_img"></p>
+          </div>
 
-            <section class="project-section">
-                <h2 data-i18n="technologies">Technologies</h2>
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">OpenCV</span>
-                    <span class="tech-tag">NumPy</span>
-                    <span class="tech-tag">Matplotlib</span>
-                    <span class="tech-tag">Scikit-image</span>
-                    <span class="tech-tag">PIL/Pillow</span>
-                </div>
-            </section>
+          <!-- Technologies -->
+          <div class="project-section">
+            <h3 data-i18n="project_technologies"></h3>
+            <div class="tech-list">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">U-Net</span>
+              <span class="tech-tag">MobileNetV2</span>
+              <span class="tech-tag">ImageNet</span>
+              <span class="tech-tag">TorchVision</span>
+            </div>
+          </div>
 
-            <section class="project-section">
-                <h2 data-i18n="methodology">Méthodologie</h2>
-                <ul>
-                    <li data-i18n="method_img_1">Analyse et implémentation d'algorithmes de filtrage</li>
-                    <li data-i18n="method_img_2">Développement de techniques de segmentation</li>
-                    <li data-i18n="method_img_3">Optimisation des performances de traitement</li>
-                    <li data-i18n="method_img_4">Tests et validation sur différents types d'images</li>
-                </ul>
-            </section>
+          <!-- Objectif -->
+          <div class="project-section">
+            <h3 data-i18n="img_objective"></h3>
+            <p data-i18n="img_objective_text"></p>
+          </div>
 
-            <section class="project-section">
-                <h2 data-i18n="features">Fonctionnalités</h2>
-                <ul>
-                    <li data-i18n="feature_img_1">Filtrage et amélioration d'images</li>
-                    <li data-i18n="feature_img_2">Détection de contours et segmentation</li>
-                    <li data-i18n="feature_img_3">Transformation géométrique</li>
-                    <li data-i18n="feature_img_4">Interface utilisateur intuitive</li>
-                </ul>
-            </section>
+          <!-- Entraînement -->
+          <div class="project-section">
+            <h3 data-i18n="img_training_title"></h3>
+            <p data-i18n="img_training_hyperparams"></p>
+            <ul class="feature-list">
+              <li data-i18n="img_training_lr"></li>
+              <li data-i18n="img_training_batch"></li>
+              <li data-i18n="img_training_epochs"></li>
+              <li data-i18n="img_training_loss"></li>
+            </ul>
+            <p style="margin-top: 12px;" data-i18n="img_training_result"></p>
+          </div>
 
-            <section class="project-section">
-                <h2 data-i18n="challenges">Défis</h2>
-                <ul>
-                    <li data-i18n="challenge_img_1">Optimisation des algorithmes pour des images haute résolution</li>
-                    <li data-i18n="challenge_img_2">Gestion de la mémoire pour le traitement batch</li>
-                    <li data-i18n="challenge_img_3">Implémentation d'algorithmes parallélisés</li>
-                </ul>
-            </section>
-        </div>
+          <!-- Architecture -->
+          <div class="project-section">
+            <h3 data-i18n="img_architecture_title"></h3>
+            <p data-i18n="img_architecture_unet"></p>
+            <p style="margin-top: 12px;" data-i18n="img_architecture_reason"></p>
+            <ul class="feature-list" style="margin-top: 12px;">
+              <li data-i18n="img_architecture_encoder"></li>
+              <li data-i18n="img_architecture_decoder"></li>
+            </ul>
+          </div>
+
+          <!-- Transfer Learning -->
+          <div class="project-section">
+            <h3 data-i18n="img_pretrain_title"></h3>
+            <p data-i18n="img_pretrain_mobilenet"></p>
+            <p style="margin-top: 12px;" data-i18n="img_pretrain_reason"></p>
+            <p style="margin-top: 12px;" data-i18n="img_pretrain_choice"></p>
+          </div>
+
+          <!-- Évaluation Qualitative -->
+          <div class="project-section">
+            <h3 data-i18n="img_eval_title"></h3>
+            <p data-i18n="img_eval_best"></p>
+            <p style="margin-top: 12px;" data-i18n="img_eval_worst"></p>
+          </div>
+
+          <!-- Évaluation Quantitative -->
+          <div class="project-section">
+            <h3 data-i18n="img_metrics_title"></h3>
+            <ul class="feature-list">
+              <li data-i18n="img_metrics_trainloss"></li>
+              <li data-i18n="img_metrics_valloss"></li>
+              <li data-i18n="img_metrics_dice"></li>
+            </ul>
+          </div>
+
+          <!-- Conclusion -->
+          <div class="project-section">
+            <h3>Conclusion</h3>
+            <p data-i18n="img_conclusion"></p>
+          </div>
+        </section>
       </article>
     </div>
   </main>

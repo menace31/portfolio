@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="../images/profil.jpg" />
-  <title>English Teacher 3 - Générateur Automatique Anki — Maxime Devillet</title>
-  <meta name="description" content="Système automatisé d'apprentissage de vocabulaire anglais qui génère des decks Anki à partir de sous-titres de films et séries. Utilise l'IA et le NLP pour extraire et filtrer le vocabulaire de niveau B2-C1." />
+  <title data-i18n="project_title_englishteacher"></title>
+  <meta name="description" content="Automated Anki deck generator from movie subtitles using AI and NLP." />
   <link rel="stylesheet" href="../styles.css" />
   <script src="../project-page.js" defer></script>
 </head>
@@ -44,128 +44,112 @@
           <div class="project-section">
             <h3 data-i18n="project_technologies">Technologies</h3>
             <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">SpaCy</span>
-              <span class="tag">NLP</span>
-              <span class="tag">Anki</span>
-              <span class="tag">Google TTS</span>
-              <span class="tag">Machine Learning</span>
-              <span class="tag">APIs</span>
-              <span class="tag">Pandas</span>
+              <span class="tag" data-i18n="et_tag_python">Python</span>
+              <span class="tag" data-i18n="et_tag_spacy">SpaCy</span>
+              <span class="tag" data-i18n="et_tag_nlp">NLP</span>
+              <span class="tag" data-i18n="et_tag_anki">Anki</span>
+              <span class="tag" data-i18n="et_tag_tts">Google TTS</span>
+              <span class="tag" data-i18n="et_tag_ml">Machine Learning</span>
+              <span class="tag" data-i18n="et_tag_apis">APIs</span>
+              <span class="tag" data-i18n="et_tag_pandas">Pandas</span>
             </div>
           </div>
 
           <div class="project-section">
             <h3 data-i18n="project_features">Fonctionnalités</h3>
             <ul>
-              <li>Extraction NLP automatique avec SpaCy pour identifier lemmes et verbes à particules</li>
-              <li>Filtrage intelligent par niveau CECRL (B2-C1) basé sur l'échelle Zipf</li>
-              <li>Génération audio TTS avec Google Text-to-Speech et cache MP3</li>
-              <li>Cartes Anki enrichies avec traductions, définitions et exemples authentiques</li>
-              <li>Base de données de vocabulaire avec historique de 1046+ mots appris</li>
-              <li>Statistiques d'efficacité détaillées (12% taux d'acceptation)</li>
+              <li data-i18n="et_feature_1">Extraction NLP automatique avec SpaCy pour identifier lemmes et verbes à particules</li>
+              <li data-i18n="et_feature_2">Filtrage intelligent par niveau CECRL (B2-C1) basé sur l'échelle Zipf</li>
+              <li data-i18n="et_feature_3">Génération audio TTS avec Google Text-to-Speech et cache MP3</li>
+              <li data-i18n="et_feature_4">Cartes Anki enrichies avec traductions, définitions et exemples authentiques</li>
+              <li data-i18n="et_feature_5">Base de données de vocabulaire avec historique de 1046+ mots appris</li>
+              <li data-i18n="et_feature_6">Statistiques d'efficacité détaillées (12% taux d'acceptation)</li>
             </ul>
           </div>
 
           <div class="project-section">
-            <h3>Vue d'ensemble</h3>
-            <p>
-              English Teacher 3 est un système sophistiqué d'automatisation de l'apprentissage du vocabulaire anglais. 
-              Le projet utilise l'intelligence artificielle et le traitement du langage naturel (NLP) pour analyser 
-              des sous-titres de films et séries, extraire le vocabulaire pertinent de niveau intermédiaire à avancé (B2-C1), 
-              et générer automatiquement des cartes de révision Anki enrichies.
-            </p>
-            <p>
-              Le système combine plusieurs technologies avancées : SpaCy pour l'analyse linguistique, APIs de traduction 
-              et dictionnaires, Text-to-Speech pour la prononciation, et un système de filtrage intelligent basé sur 
-              l'échelle CECRL pour garantir la pertinence du vocabulaire extrait. Avec un taux d'efficacité de 12%, 
-              le système filtre intelligemment 88% du bruit pour ne conserver que le vocabulaire de qualité.
-            </p>
+            <h3 data-i18n="et_overview_title">Vue d'ensemble</h3>
+            <p data-i18n="et_overview_p1">English Teacher 3 est un système sophistiqué d'automatisation de l'apprentissage du vocabulaire anglais. Le projet utilise l'intelligence artificielle et le traitement du langage naturel (NLP) pour analyser des sous-titres de films et séries, extraire le vocabulaire pertinent de niveau intermédiaire à avancé (B2-C1), et générer automatiquement des cartes de révision Anki enrichies.</p>
+            <p data-i18n="et_overview_p2">Le système combine plusieurs technologies avancées : SpaCy pour l'analyse linguistique, APIs de traduction et dictionnaires, Text-to-Speech pour la prononciation, et un système de filtrage intelligent basé sur l'échelle CECRL pour garantir la pertinence du vocabulaire extrait. Avec un taux d'efficacité de 12%, le système filtre intelligemment 88% du bruit pour ne conserver que le vocabulaire de qualité.</p>
           </div>
 
           <div class="project-section">
             <h3 data-i18n="project_challenges">Défis Techniques</h3>
             <ul>
-              <li><strong>Optimisation du filtrage linguistique :</strong> Développement d'un système de scoring CECRL automatisé utilisant l'échelle Zipf pour éviter 88% de bruit</li>
-              <li><strong>Intégration multi-APIs :</strong> Orchestration complexe entre Dictionary API, Google Translate, et Google TTS avec gestion des erreurs et rate limiting</li>
-              <li><strong>Gestion intelligente du cache audio :</strong> Système de retry exponentiel pour l'API TTS et cache MP3 optimisé</li>
-              <li><strong>Algorithme de similarité phonétique :</strong> Utilisation de Jellyfish (soundex) pour exclure les mots anglais trop similaires à leur traduction française</li>
-              <li><strong>Workflow d'automatisation :</strong> Coordination de 6 modules distincts pour un processus end-to-end fluide</li>
+              <li data-i18n="et_challenge_1"><strong>Optimisation du filtrage linguistique :</strong> Développement d'un système de scoring CECRL automatisé utilisant l'échelle Zipf pour éviter 88% de bruit</li>
+              <li data-i18n="et_challenge_2"><strong>Intégration multi-APIs :</strong> Orchestration complexe entre Dictionary API, Google Translate, et Google TTS avec gestion des erreurs et rate limiting</li>
+              <li data-i18n="et_challenge_3"><strong>Gestion intelligente du cache audio :</strong> Système de retry exponentiel pour l'API TTS et cache MP3 optimisé</li>
+              <li data-i18n="et_challenge_4"><strong>Algorithme de similarité phonétique :</strong> Utilisation de Jellyfish (soundex) pour exclure les mots anglais trop similaires à leur traduction française</li>
+              <li data-i18n="et_challenge_5"><strong>Workflow d'automatisation :</strong> Coordination de 6 modules distincts pour un processus end-to-end fluide</li>
             </ul>
           </div>
         </section>
 
-        <section class="project-section">
-          <h2>Architecture du Projet</h2>
+          <section class="project-section">
+          <h2 data-i18n="et_architecture_title">Architecture du Projet</h2>
           <div class="architecture-grid">
             <div class="arch-item">
-              <h3>Module d'extraction (utils.py)</h3>
-              <p>Analyse linguistique avec SpaCy pour extraire lemmes, verbes à particules et vocabulaire pertinent depuis les sous-titres SRT/SUB</p>
+              <h3 data-i18n="et_arch_mod_extract">Module d'extraction (utils.py)</h3>
+              <p data-i18n="et_arch_mod_extract_text">Analyse linguistique avec SpaCy pour extraire lemmes, verbes à particules et vocabulaire pertinent depuis les sous-titres SRT/SUB</p>
             </div>
             <div class="arch-item">
-              <h3>Système de filtrage intelligent</h3>
-              <p>Filtrage multi-critères : niveau CECRL (B2-C1), validation orthographique, exclusion des doublons et des mots trop similaires FR/EN</p>
+              <h3 data-i18n="et_arch_filter">Système de filtrage intelligent</h3>
+              <p data-i18n="et_arch_filter_text">Filtrage multi-critères : niveau CECRL (B2-C1), validation orthographique, exclusion des doublons et des mots trop similaires FR/EN</p>
             </div>
             <div class="arch-item">
-              <h3>Module de traduction (translate.py)</h3>
-              <p>Traduction automatique via Google Translate et enrichissement avec définitions et exemples depuis Dictionary API</p>
+              <h3 data-i18n="et_arch_translate">Module de traduction (translate.py)</h3>
+              <p data-i18n="et_arch_translate_text">Traduction automatique via Google Translate et enrichissement avec définitions et exemples depuis Dictionary API</p>
             </div>
             <div class="arch-item">
-              <h3>Génération audio (speech.py)</h3>
-              <p>Synthèse vocale avec Google Text-to-Speech, gestion du rate limiting et cache MP3 pour éviter les régénérations</p>
+              <h3 data-i18n="et_arch_speech">Génération audio (speech.py)</h3>
+              <p data-i18n="et_arch_speech_text">Synthèse vocale avec Google Text-to-Speech, gestion du rate limiting et cache MP3 pour éviter les régénérations</p>
             </div>
             <div class="arch-item">
-              <h3>Création de decks (deck_anki.py)</h3>
-              <p>Modèle de carte Anki personnalisé avec interface interactive, lecture audio automatique et champs de saisie</p>
+              <h3 data-i18n="et_arch_decks">Création de decks (deck_anki.py)</h3>
+              <p data-i18n="et_arch_decks_text">Modèle de carte Anki personnalisé avec interface interactive, lecture audio automatique et champs de saisie</p>
             </div>
             <div class="arch-item">
-              <h3>Orchestration (main.py)</h3>
-              <p>Coordination du workflow complet, gestion des statistiques et mise à jour de la base de données de vocabulaire</p>
+              <h3 data-i18n="et_arch_orch">Orchestration (main.py)</h3>
+              <p data-i18n="et_arch_orch_text">Coordination du workflow complet, gestion des statistiques et mise à jour de la base de données de vocabulaire</p>
             </div>
           </div>
         </section>
 
         <section class="project-section">
-          <h2>Performance et Résultats</h2>
+          <h2 data-i18n="et_performance_title">Performance et Résultats</h2>
           <div class="results-grid">
             <div class="result-item">
-              <h3>Efficacité du filtrage</h3>
-              <p><strong>12% de taux d'acceptation</strong> des mots extraits, garantissant un vocabulaire de haute qualité après filtrage intelligent selon 6 critères distincts.</p>
+              <h3 data-i18n="et_perf_filtering_title">Efficacité du filtrage</h3>
+              <p data-i18n="et_perf_filtering_text"><strong>12% de taux d'acceptation</strong> des mots extraits, garantissant un vocabulaire de haute qualité après filtrage intelligent selon 6 critères distincts.</p>
             </div>
             <div class="result-item">
-              <h3>Base de données vocabulaire</h3>
-              <p><strong>1046+ mots catalogués</strong> dans vocabulaire.csv avec niveau CECRL associé et historique complet pour éviter les doublons.</p>
+              <h3 data-i18n="et_perf_db_title">Base de données vocabulaire</h3>
+              <p data-i18n="et_perf_db_text"><strong>1046+ mots catalogués</strong> dans vocabulaire.csv avec niveau CECRL associé et historique complet pour éviter les doublons.</p>
             </div>
             <div class="result-item">
-              <h3>Répartition du filtrage</h3>
-              <p><strong>88% de filtrage automatique :</strong> 60% mots trop faciles (A2/B1), 11% trop similaires FR/EN, 9% non-anglais, 6% déjà appris.</p>
+              <h3 data-i18n="et_perf_split_title">Répartition du filtrage</h3>
+              <p data-i18n="et_perf_split_text"><strong>88% de filtrage automatique :</strong> 60% mots trop faciles (A2/B1), 11% trop similaires FR/EN, 9% non-anglais, 6% déjà appris.</p>
             </div>
             <div class="result-item">
-              <h3>Contenu traité</h3>
-              <p><strong>Films et séries analysés :</strong> Tron Legacy, Gravity Falls, Good Boy 2025 avec extraction complète du vocabulaire et génération de decks Anki.</p>
+              <h3 data-i18n="et_perf_content_title">Contenu traité</h3>
+              <p data-i18n="et_perf_content_text"><strong>Films et séries analysés :</strong> Tron Legacy, Gravity Falls, Good Boy 2025 avec extraction complète du vocabulaire et génération de decks Anki.</p>
             </div>
           </div>
         </section>
 
         <section class="project-section">
-          <h2>Innovation Pédagogique</h2>
-          <p>
+          <h2 data-i18n="et_innov_title">Innovation Pédagogique</h2>
+          <p data-i18n="et_innov_p1">
             Le projet révolutionne l'apprentissage du vocabulaire anglais en combinant contenus authentiques (films/séries) 
             et technologies d'IA pour créer une expérience d'apprentissage personnalisée et efficace. L'utilisation de 
             l'échelle CECRL automatisée garantit un niveau de difficulté optimal, tandis que le système de cartes Anki 
             enrichies (audio + définitions + exemples) maximise les chances de mémorisation à long terme.
           </p>
-          <p>
+          <p data-i18n="et_innov_p2">
             Avec un taux d'acceptation de seulement 12%, le système prouve son efficacité dans la curation de vocabulaire 
             de qualité, transformant le bruit des sous-titres en ressources pédagogiques structurées et adaptées au niveau de l'apprenant.
           </p>
         </section>
-
-        <div class="project-links">
-          <a href="https://github.com/menace31/english-teacher-3" target="_blank" rel="noopener" class="btn">
-            <span data-i18n="view_code">Code source</span>
-          </a>
-        </div>
       </article>
     </div>
   </main>

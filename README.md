@@ -32,7 +32,7 @@ Portfolio/
 │   ├── cgan.html
 │   ├── skijo.html
 │   ├── kapsule-temporelle.html
-│   ├── game-jab.html
+│   ├── game-jam.html
 │   └── english-teacher-3.html
 └── report/                 # Rapports PDF des projets
 ```
@@ -63,7 +63,7 @@ python3 -m http.server 8000
 ### Projets personnels (4)
 1. **Skijo** — Implémentation Python du jeu Skyjo avec interface Tkinter
 2. **KAPsule Temporelle** — Application de cryptographie visuelle avec IA
-3. **Game Jab** — Plateforme d'apprentissage gamifiée avec répétition espacée
+3. **Game Jam 2023** — Prototype de jeu de plateforme narratif (2ème place)
 4. **English Teacher 3** — Générateur automatique de decks Anki avec NLP
 
 ## 🌐 Déploiement GitHub Pages

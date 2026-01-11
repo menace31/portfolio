@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="../images/profil.jpg" />
-  <title>Projet Open Source LINFO2171 — Maxime Devillet</title>
-  <meta name="description" content="Projet de contribution à un projet open source dans le cadre du cours LINFO2171 - Open Source Software Development." />
+  <title data-i18n="opensource_title">Node.js Userland-Migrations - LINFO2401</title>
+  <meta name="description" content="Contribution au projet officiel Node.js userland-migrations : développement d'un codemod pour migrer tls.SecurePair vers tls.TLSSocket dans le cadre du cours LINFO2401." />
   <link rel="stylesheet" href="../styles.css" />
   <script src="../project-page.js" defer></script>
 </head>
@@ -28,71 +28,152 @@
     <div class="container">        
       <article class="project-article">
         <header class="project-header">
-          <img src="../images/Userland-Migration.png" alt="Projet Open Source LINFO2171" class="project-hero">
-          <h1 data-i18n="project_title_3">Projet Open Source LINFO2171</h1>
+          <img src="../images/Userland-Migration.png" alt="Node.js Userland-Migrations" class="project-hero">
+          <h1 data-i18n="opensource_title">Node.js Userland-Migrations - LINFO2401</h1>
           <div class="project-actions">
-            <a href="https://github.com/mdevillet/opensource-contribution" target="_blank" rel="noopener" class="btn" data-i18n="btn_code">Code</a>
+            <a href="https://github.com/nodejs/userland-migrations/pull/286" target="_blank" rel="noopener" class="btn">Pull Request #286</a>
+            <a href="https://github.com/menace31/userland-migrations/tree/MaximeD" target="_blank" rel="noopener" class="btn" data-i18n="btn_code">Code</a>
             <a href="../report/Opensourceproject.pdf" target="_blank" class="btn">Rapport PDF</a>
           </div>
         </header>
         
         <section class="project-content">
           <div class="project-description">
-            <p data-i18n="project_description_3">Projet de contribution significative à un projet open source existant dans le cadre du cours LINFO2171. Focus sur l'amélioration d'un outil de développement populaire avec des fonctionnalités innovantes, documentation complète et tests automatisés.</p>
+            <p data-i18n="opensource_desc"></p>
           </div>
           
           <div class="project-section">
+            <h3 data-i18n="opensource_objective_title"></h3>
+            <p data-i18n="opensource_objective_text"></p>
+          </div>
+
+          <div class="project-section">
             <h3 data-i18n="project_technologies">Technologies</h3>
             <div class="tech-list">
-              <span class="tech-tag">JavaScript</span>
               <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">jscodeshift</span>
+              <span class="tech-tag">AST (Abstract Syntax Tree)</span>
               <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Jest</span>
-              <span class="tech-tag">GitHub Actions</span>
-              <span class="tech-tag">ESLint</span>
-              <span class="tech-tag">Webpack</span>
-              <span class="tech-tag">Babel</span>
+              <span class="tech-tag">GitHub Actions CI</span>
             </div>
           </div>
           
           <div class="project-section">
-            <h3 data-i18n="project_opensource_approach">Approche Open Source</h3>
+            <h3 data-i18n="opensource_transformations_title"></h3>
             <ul class="feature-list">
-              <li data-i18n="opensource_1">Analyse et sélection du projet cible</li>
-              <li data-i18n="opensource_2">Étude du code base et architecture</li>
-              <li data-i18n="opensource_3">Identification des besoins communauté</li>
-              <li data-i18n="opensource_4">Développement de fonctionnalités</li>
-              <li data-i18n="opensource_5">Tests et documentation complète</li>
-              <li data-i18n="opensource_6">Pull requests et code review</li>
+              <li data-i18n="opensource_transform_1"></li>
+              <li data-i18n="opensource_transform_2"></li>
+              <li data-i18n="opensource_transform_3"></li>
+              <li data-i18n="opensource_transform_4"></li>
+              <li data-i18n="opensource_transform_5"></li>
             </ul>
           </div>
-          
+
           <div class="project-section">
-            <h3 data-i18n="project_features">Contributions Principales</h3>
+            <h3 data-i18n="opensource_modules_title"></h3>
+            <div style="margin-top:12px;">
+              <h4 style="font-size:1rem;margin-bottom:8px;">CommonJS</h4>
+              <pre style="background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:6px;overflow-x:auto;"><code>const tls = require('node:tls');
+const { SecurePair } = require('node:tls');</code></pre>
+              
+              <h4 style="font-size:1rem;margin:16px 0 8px;">ESM (ES Modules)</h4>
+              <pre style="background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:6px;overflow-x:auto;"><code>import tls from 'node:tls';
+import { SecurePair } from 'node:tls';</code></pre>
+            </div>
+          </div>
+
+          <div class="project-section">
+            <h3 data-i18n="opensource_examples_title"></h3>
+            
+            <h4 style="font-size:1rem;margin:16px 0 8px;">Cas 1 : CommonJS avec namespace</h4>
+            <pre style="background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:6px;overflow-x:auto;"><code>// Avant
+const tls = require('node:tls');
+const pair = new tls.SecurePair();
+const encrypted = pair.encrypted;
+
+// Après
+const socket = new tls.TLSSocket(socket);</code></pre>
+
+            <h4 style="font-size:1rem;margin:16px 0 8px;">Cas 2 : ESM avec destructuring</h4>
+            <pre style="background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:6px;overflow-x:auto;"><code>// Avant
+import { SecurePair } from 'node:tls';
+const myPair = new SecurePair();
+myPair.cleartext.write('hello');
+
+// Après
+import { TLSSocket } from 'node:tls';
+const mySocket = new TLSSocket(socket);
+mySocket.write('hello');</code></pre>
+
+            <h4 style="font-size:1rem;margin:16px 0 8px;">Cas 3 : Renommage dans la portée</h4>
+            <pre style="background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:6px;overflow-x:auto;"><code>// Avant
+const securePair = new tls.SecurePair();
+securePair.on('error', (err) => {
+  console.error(err);
+});
+
+// Après
+const secureSocket = new tls.TLSSocket(socket);
+secureSocket.on('error', (err) => {
+  console.error(err);
+});</code></pre>
+
+            <h4 style="font-size:1rem;margin:16px 0 8px;">Cas 4 : Variables multiples avec cleanup</h4>
+            <pre style="background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:6px;overflow-x:auto;"><code>// Avant
+const { SecurePair } = require('node:tls');
+const pair = new SecurePair();
+const cleartext = pair.cleartext;
+
+// Après
+const { TLSSocket } = require('node:tls');
+const socket = new TLSSocket(socket);</code></pre>
+          </div>
+
+          <div class="project-section" style="background:rgba(220,220,220,0.05);padding:16px;border-left:3px solid rgba(255,255,255,0.3);border-radius:6px;">
+            <h3 data-i18n="opensource_warning_title"></h3>
+            <p data-i18n="opensource_warning_text"></p>
+          </div>
+
+          <div class="project-section">
+            <h3 data-i18n="opensource_context_title"></h3>
+            
+            <h4 style="font-size:1.05rem;margin:16px 0 8px;" data-i18n="opensource_context_1_title"></h4>
+            <p data-i18n="opensource_context_1_text"></p>
+
+            <h4 style="font-size:1.05rem;margin:16px 0 8px;" data-i18n="opensource_context_2_title"></h4>
+            <p data-i18n="opensource_context_2_text"></p>
             <ul class="feature-list">
-              <li data-i18n="feature3_1">Nouvelle API pour gestion des plugins</li>
-              <li data-i18n="feature3_2">Interface utilisateur améliorée</li>
-              <li data-i18n="feature3_3">Système de configuration dynamique</li>
-              <li data-i18n="feature3_4">Performance optimisée (-40% temps de build)</li>
-              <li data-i18n="feature3_5">Documentation technique détaillée</li>
-              <li data-i18n="feature3_6">Suite de tests automatisés complète</li>
+              <li data-i18n="opensource_context_2_obj"></li>
+              <li data-i18n="opensource_context_2_complex"></li>
             </ul>
-          </div>
-          
-          <div class="project-section">
-            <h3 data-i18n="project_community_impact">Impact Communauté</h3>
-            <p data-i18n="project_community_text">Contribution acceptée et intégrée dans la version principale du projet. Amélioration significative de l'expérience développeur avec plus de 500 utilisateurs impactés. Collaboration active avec l'équipe de maintenance et participation aux discussions communautaires.</p>
-          </div>
-          
-          <div class="project-section">
-            <h3 data-i18n="project_results">Résultats & Reconnaissance</h3>
+
+            <h4 style="font-size:1.05rem;margin:16px 0 8px;" data-i18n="opensource_context_3_title"></h4>
+            <p data-i18n="opensource_context_3_text"></p>
             <ul class="feature-list">
-              <li>Pull Request mergée : #1247 (+2,500 lignes de code)</li>
-              <li>Issues résolues : 8 bugs critiques fermés</li>
-              <li>Performance : 40% d'amélioration temps de compilation</li>
-              <li>Communauté : 25+ développeurs ont testé les améliorations</li>
-              <li>Mention : Contributor du mois sur le projet</li>
+              <li data-i18n="opensource_context_3_1"></li>
+              <li data-i18n="opensource_context_3_2"></li>
+              <li data-i18n="opensource_context_3_3"></li>
+            </ul>
+
+            <h4 style="font-size:1.05rem;margin:16px 0 8px;" data-i18n="opensource_context_4_title"></h4>
+            <p data-i18n="opensource_context_4_text"></p>
+            <ul class="feature-list">
+              <li data-i18n="opensource_context_4_1"></li>
+              <li data-i18n="opensource_context_4_2"></li>
+              <li data-i18n="opensource_context_4_3"></li>
+            </ul>
+
+            <h4 style="font-size:1.05rem;margin:16px 0 8px;" data-i18n="opensource_context_5_title"></h4>
+            <p data-i18n="opensource_context_5_text"></p>
+          </div>
+          
+          <div class="project-section">
+            <h3 data-i18n="opensource_links_title"></h3>
+            <ul class="feature-list">
+              <li><strong data-i18n="opensource_link_upstream"></strong> <a href="https://github.com/nodejs/userland-migrations" target="_blank">github.com/nodejs/userland-migrations</a></li>
+              <li><strong data-i18n="opensource_link_pr"></strong> <a href="https://github.com/nodejs/userland-migrations/pull/286" target="_blank">Pull Request #286</a></li>
+              <li><strong data-i18n="opensource_link_license"></strong> MIT</li>
+              <li><strong data-i18n="opensource_link_domain"></strong> Refactoring automatisé (Migration d'API TLS)</li>
             </ul>
           </div>
         </section>

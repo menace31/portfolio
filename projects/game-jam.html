@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../images/profil.jpg" />
+  <title data-i18n="project_title_gamejab"></title>
+  <meta name="description" content="Game Jam 2023 platformer game prototype with narrative gameplay." />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../project-page.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="main-nav">
+        <a href="../index.html" class="btn-back">
+          <span data-i18n="btn_back">← Retour</span>
+        </a>
+      </nav>
+      <div class="controls">
+        <button class="lang-btn" data-lang="fr" aria-pressed="false" aria-label="Français">FR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">        
+      <article class="project-article">
+        <header class="project-header">
+          <img src="../images/game_jab.png" alt="Game Jam 2023" class="project-hero">
+          <h1 data-i18n="project_title_gamejab">Game Jam 2023</h1>
+          <p class="project-description" data-i18n="project_description_gamejab">
+            Prototype de jeu de plateforme narratif développé en 24h avec Godot lors de la Game Jam 2023. 2ème place obtenue. Projet réalisé en équipe de 4 (2 développeurs, 2 graphistes). Concours organisé par le kot à projet « Le Linux ». Le thème était « solutions non violentes » : tuer les adversaires est facile, mais l'objectif du joueur est de sortir du puits en utilisant le moins de violence possible pour ne pas sombrer dans la folie.
+          </p>
+          <div class="project-actions">
+            <a href="../report/Game_Jab_2023.pdf" target="_blank" class="btn">
+              <span data-i18n="view_report">Voir le rapport</span>
+            </a>
+            <a href="https://github.com/menace31/Game-jam-2023" target="_blank" rel="noopener" class="btn">
+              <span data-i18n="view_code">Code</span>
+            </a>
+          </div>
+        </header>
+
+        <section class="project-content">
+          <div class="project-section">
+            <h3 data-i18n="project_technologies">Technologies</h3>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Godot</span>
+              <span class="tag">LocalStorage</span>
+              <span class="tag">Responsive Design</span>
+              <span class="tag">UX/UI</span>
+            </div>
+          </div>
+
+          <div class="project-section">
+            <h3 data-i18n="gamejam_context_title">Contexte</h3>
+            <p data-i18n="gamejam_context"></p>
+            <p data-i18n="gamejam_synopsis_text"></p>
+            <p data-i18n="gamejam_design_text"></p>
+          </div>
+
+          <div class="project-section">
+            <h3 data-i18n="project_features">Fonctionnalités Principales</h3>
+            <div class="features-grid">
+              <div class="feature-item">
+                <h4 data-i18n="gamejam_feature_1_title">Déplacements et Saut</h4>
+                <p data-i18n="gamejam_feature_1_text">Mécaniques de plateforme classiques : déplacement gauche/droite, saut et interaction avec l'environnement (poussée d'objets).</p>
+              </div>
+              <div class="feature-item">
+                <h4 data-i18n="gamejam_feature_2_title">Collisions et Ennemis</h4>
+                <p data-i18n="gamejam_feature_2_text">Système de détection de collisions, comportements ennemis simples et pièges statiques dans les niveaux.</p>
+              </div>
+              <div class="feature-item">
+                <h4 data-i18n="gamejam_feature_3_title">Ambiance Visuelle</h4>
+                <p data-i18n="gamejam_feature_3_text">Esthétique noir et blanc avec accent rose pour certains éléments perturbants, calques multiples pour l'effet 2.5D.</p>
+              </div>
+              <div class="feature-item">
+                <h4 data-i18n="gamejam_feature_4_title">Séquences Animées</h4>
+                <p data-i18n="gamejam_feature_4_text">Courtes animations d'introduction et transitions réalisées avec After Effects pour améliorer la narration.</p>
+              </div>
+              <div class="feature-item">
+                <h4 data-i18n="gamejam_feature_5_title">Niveaux</h4>
+                <p data-i18n="gamejam_feature_5_text">Plusieurs niveaux avec progression vers la surface : montée progressive de la lumière et complexité des obstacles.</p>
+              </div>
+              <div class="feature-item">
+                <h4 data-i18n="gamejam_feature_6_title">Soundtrack</h4>
+                <p data-i18n="gamejam_feature_6_text">Musique d'ambiance conçue pour renforcer le malaise et l'atmosphère du jeu.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 'Innovation Technique' retirée -->
+
+          <div class="project-section">
+            <h3 data-i18n="gamejam_characters_title">Graphisme & Personnages</h3>
+            <div class="gamification-grid">
+              <div class="game-mechanic">
+                <h4 data-i18n="gamejam_sub_personnages">Personnages</h4>
+                <ul>
+                  <li data-i18n="gamejam_char_1">Bobbi : petit chat noir, instable mentalement et personnage jouable.</li>
+                  <li data-i18n="gamejam_char_2">Le papillon maléfique : manifestation des tendances psychopathiques de Bobbi.</li>
+                  <li data-i18n="gamejam_char_3">Obstacles et créatures : silhouettes noires et slimes qui peuplent la grotte.</li>
+                </ul>
+              </div>
+              <div class="game-mechanic">
+                <h4 data-i18n="gamejam_sub_decors">Décors</h4>
+                <ul>
+                  <li data-i18n="gamejam_decor_1">Niveaux dessinés sur plusieurs calques pour créer une profondeur 2.5D.</li>
+                  <li data-i18n="gamejam_decor_2">Menu principal et niveaux illustrés en style monochrome avec accents de couleur.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-illustrations">
+              <figure>
+                <img class="project-hero" src="../images/papillon.png" alt="Papillon maléfique" />
+                <figcaption data-i18n="gamejam_char_butterfly">Le papillon maléfique, élément narratif central</figcaption>
+              </figure>
+              <figure>
+                <img class="project-hero" src="../images/kill.png" alt="Icône 'kill'" />
+                <figcaption data-i18n="gamejam_results_achievement">Illustration du concept de violence facile dans le prototype</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Section 'Défis Techniques et Solutions' retirée par demande -->
+
+          <!-- Section 'Architecture et Patterns' retirée -->
+
+          <!-- Section 'Évolutions Futures' retirée -->
+
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small data-i18n="copyright">&copy; 2026 Devillet Maxime — Portfolio template</small>
+    </div>
+  </footer>
+</body>
+</html>

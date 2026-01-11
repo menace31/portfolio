@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="../images/profil.jpg" />
-  <title>Skijo — Implémentation de Skyjo — Maxime Devillet</title>
-  <meta name="description" content="Implémentation Python du jeu de cartes Skyjo avec interface Tkinter, système de scores et logique multijoueur." />
+  <title data-i18n="project_title_skijo"></title>
+  <meta name="description" content="Python implementation of the Skyjo card game with bot competition platform." />
   <link rel="stylesheet" href="../styles.css" />
   <script src="../project-page.js" defer></script>
 </head>
@@ -29,7 +29,7 @@
       <article class="project-article">
         <header class="project-header">
           <img src="../images/Skyjo.png" alt="Skijo - Jeu de cartes" class="project-hero">
-          <h1 data-i18n="project_title_skijo">Skijo — Implémentation de Skyjo</h1>
+          <h1 data-i18n="project_title_skijo">Skijo - Implémentation de Skyjo</h1>
           <p class="project-description" data-i18n="project_description_skijo">
             Implémentation Python du jeu de cartes Skyjo avec interface Tkinter, système de scores et logique multijoueur.
           </p>
@@ -44,86 +44,71 @@
           <div class="project-section">
             <h3 data-i18n="project_technologies">Technologies</h3>
             <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Tkinter</span>
-              <span class="tag">GUI</span>
-              <span class="tag">Jeu</span>
+              <span class="tag" data-i18n="skijo_tag_python">Python</span>
+              <span class="tag" data-i18n="skijo_tag_tkinter">Tkinter</span>
+              <span class="tag" data-i18n="skijo_tag_gui">GUI</span>
+              <span class="tag" data-i18n="skijo_tag_game">Jeu</span>
             </div>
           </div>
 
           <div class="project-section">
             <h3 data-i18n="project_features">Fonctionnalités</h3>
             <ul>
-              <li>Interface graphique Tkinter intuitive</li>
-              <li>Gestion multijoueur pour 2-8 joueurs</li>
-              <li>Système de score par manche avec historique</li>
-              <li>Architecture modulaire (core/gui/bots)</li>
-              <li>Logique de jeu complète avec phases de révélation</li>
-              <li>Base pour l'implémentation de bots IA</li>
+              <li data-i18n="skijo_feature_1">Interface graphique Tkinter intuitive</li>
+              <li data-i18n="skijo_feature_2">Gestion multijoueur pour 2-8 joueurs</li>
+              <li data-i18n="skijo_feature_3">Système de score par manche avec historique</li>
+              <li data-i18n="skijo_feature_4">Architecture modulaire (core/gui/bots)</li>
+              <li data-i18n="skijo_feature_5">Logique de jeu complète avec phases de révélation</li>
+              <li data-i18n="skijo_feature_6">Base pour l'implémentation de bots IA</li>
             </ul>
           </div>
 
           <div class="project-section">
-            <h3>Règles du Jeu</h3>
-            <p>
-              Skyjo est un jeu de cartes où le but est d'obtenir le score le plus bas possible. 
-              Chaque joueur commence avec 12 cartes disposées en grille 4x3, face cachée. 
-              Le jeu se déroule en plusieurs manches, et chaque manche se termine quand un joueur 
-              révèle toutes ses cartes ou décide de terminer.
-            </p>
-            <p>
-              Les cartes ont des valeurs de -2 à 12, et le défi est de remplacer strategiquement 
-              les cartes de valeur élevée par des cartes de valeur plus faible, tout en gérant 
-              les informations partielles sur ses propres cartes et celles des adversaires.
-            </p>
+            <h3 data-i18n="skijo_rules_title">Règles du Jeu</h3>
+            <p data-i18n="skijo_rules_p1"></p>
+            <p data-i18n="skijo_rules_p2"></p>
           </div>
 
           <div class="project-section">
             <h3 data-i18n="project_challenges">Défis Techniques</h3>
             <ul>
-              <li><strong>Gestion des états du jeu :</strong> Coordination complexe entre l'état des cartes de chaque joueur et la logique de tour</li>
-              <li><strong>Phase de révélation initiale :</strong> Implémentation de la séquence d'ouverture des cartes selon les règles</li>
-              <li><strong>Interface utilisateur :</strong> Création d'une grille de cartes interactive avec Tkinter</li>
-              <li><strong>Architecture modulaire :</strong> Séparation claire entre logique de jeu, interface et future IA</li>
-              <li><strong>Système de scoring :</strong> Calcul automatique des scores avec gestion des manches multiples</li>
+              <li data-i18n="skijo_challenge_1"><strong>Gestion des états du jeu :</strong> Coordination complexe entre l'état des cartes de chaque joueur et la logique de tour</li>
+              <li data-i18n="skijo_challenge_2"><strong>Phase de révélation initiale :</strong> Implémentation de la séquence d'ouverture des cartes selon les règles</li>
+              <li data-i18n="skijo_challenge_3"><strong>Interface utilisateur :</strong> Création d'une grille de cartes interactive avec Tkinter</li>
+              <li data-i18n="skijo_challenge_4"><strong>Architecture modulaire :</strong> Séparation claire entre logique de jeu, interface et future IA</li>
+              <li data-i18n="skijo_challenge_5"><strong>Système de scoring :</strong> Calcul automatique des scores avec gestion des manches multiples</li>
             </ul>
           </div>
         </section>
 
         <section class="project-section">
-          <h2>Architecture du Projet</h2>
+          <h2 data-i18n="project_architecture">Architecture du Projet</h2>
           <div class="architecture-grid">
             <div class="arch-item">
-              <h3>Core Game Logic</h3>
-              <p>Moteur de jeu principal avec règles, validation des mouvements et gestion des états</p>
+              <h3 data-i18n="skijo_arch_core_title">Core Game Logic</h3>
+              <p data-i18n="skijo_arch_core_text">Moteur de jeu principal avec règles, validation des mouvements et gestion des états</p>
             </div>
             <div class="arch-item">
-              <h3>Tkinter GUI</h3>
-              <p>Interface graphique avec grille interactive, affichage des scores et contrôles de jeu</p>
+              <h3 data-i18n="skijo_arch_gui_title">Tkinter GUI</h3>
+              <p data-i18n="skijo_arch_gui_text">Interface graphique avec grille interactive, affichage des scores et contrôles de jeu</p>
             </div>
             <div class="arch-item">
-              <h3>Player Management</h3>
-              <p>Gestion des joueurs humains et préparation pour l'intégration de bots IA</p>
+              <h3 data-i18n="skijo_arch_players_title">Player Management</h3>
+              <p data-i18n="skijo_arch_players_text">Gestion des joueurs humains et préparation pour l'intégration de bots IA</p>
             </div>
             <div class="arch-item">
-              <h3>Score System</h3>
-              <p>Calcul automatique des scores par manche et suivi des statistiques globales</p>
+              <h3 data-i18n="skijo_arch_score_title">Score System</h3>
+              <p data-i18n="skijo_arch_score_text">Calcul automatique des scores par manche et suivi des statistiques globales</p>
             </div>
           </div>
         </section>
-
-        <div class="project-links">
-          <a href="https://github.com/menace31/Skijo" target="_blank" rel="noopener" class="btn">
-            <span data-i18n="view_code">Code source</span>
-          </a>
-        </div>
       </article>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <small data-i18n="copyright">&copy; 2026 Devillet Maxime — Portfolio template</small>
+      <small data-i18n="copyright">&copy; 2026 Devillet Maxime - Portfolio template</small>
     </div>
   </footer>
 </body>
