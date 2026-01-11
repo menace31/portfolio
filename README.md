@@ -1,53 +1,149 @@
-# Portfolio — Template
+# Portfolio Maxime Devillet
 
-Ce dépôt contient un template simple de portfolio statique (HTML/CSS/JS) prêt à être personnalisé et publié sur GitHub Pages.
+Portfolio personnel bilingue (FR/EN) développé avec HTML, CSS et JavaScript vanilla. Optimisé pour GitHub Pages avec support complet de l'internationalisation et architecture modulaire.
 
-## Personnalisation
-- Ouvrez `index.html` et remplacez "Votre Nom", la tagline et l'email.
-- Modifiez `projects.json` pour lister vos projets (titre, description, repo, demo, tags).
-- Mettez vos images et autres ressources dans un dossier `assets/` et référencez-les depuis `index.html` ou `projects.json`.
+## ✨ Fonctionnalités
 
-## Prévisualisation locale
-Vous pouvez prévisualiser le site localement avec un serveur simple (Python 3) :
+- **🌍 Support bilingue** — Interface complète en français et anglais avec persistance du choix
+- **📱 Design responsive** — Interface moderne compatible mobile/desktop
+- **🎯 Navigation par catégories** — Carrousels séparés pour projets d'étude et projets personnels
+- **📄 Pages projet détaillées** — Documentation technique complète pour chaque projet
+- **🖼️ Gestion d'assets** — Images optimisées et rapports PDF intégrés
+- **⚡ Performance optimisée** — Site statique, chargement rapide, compatible GitHub Pages
 
-```bash
-# depuis le dossier du projet
-python3 -m http.server 8000
-# puis ouvrez http://localhost:8000 dans votre navigateur
+## 🏗️ Structure du projet
+
+```
+Portfolio/
+├── index.html              # Page d'accueil principale
+├── styles.css              # Styles principaux
+├── script.js               # Logique JavaScript (carrousels, i18n)
+├── project-page.js         # Script pour pages de projets
+├── translations.json       # Fichier de traductions FR/EN
+├── projects.json           # Données des projets (structure de référence)
+├── projects.fr.json        # Projets en français
+├── projects.en.json        # Projets en anglais
+├── images/                 # Images des projets et assets
+├── projects/               # Pages HTML individuelles des projets
+│   ├── entreprise-x.html
+│   ├── todo-react.html
+│   ├── opensource-project.html
+│   ├── image-processing.html
+│   ├── cgan.html
+│   ├── skijo.html
+│   ├── kapsule-temporelle.html
+│   ├── game-jab.html
+│   └── english-teacher-3.html
+└── report/                 # Rapports PDF des projets
 ```
 
-## Déployer sur GitHub Pages (rapide)
-1. Créez un dépôt sur GitHub (ex: `portfolio`).
-2. Initialisez git et poussez :
+## 🚀 Développement local
 
 ```bash
-git init
-git add .
-git commit -m "Initial commit: template portfolio"
-git branch -M main
-git remote add origin https://github.com/<votre-utilisateur>/portfolio.git
+# Cloner le repository
+git clone <url-du-repo>
+cd Portfolio
+
+# Lancer le serveur de développement
+python3 -m http.server 8000
+
+# Ouvrir dans le navigateur
+# http://localhost:8000
+```
+
+## 📋 Projets inclus
+
+### Projets d'étude (5)
+1. **Projet Cloud Computing LINFO2145** — Architecture microservices sur Azure
+2. **Mémoire - Carbon Calculator** — Calculateur d'empreinte carbone avec IA
+3. **Projet Open Source LINFO2171** — Contribution majeure open source
+4. **Projet de Traitement d'Images** — Algorithmes de filtrage et segmentation
+5. **Réseaux Adverses Génératifs Conditionnels** — Implémentation CGAN
+
+### Projets personnels (4)
+1. **Skijo** — Implémentation Python du jeu Skyjo avec interface Tkinter
+2. **KAPsule Temporelle** — Application de cryptographie visuelle avec IA
+3. **Game Jab** — Plateforme d'apprentissage gamifiée avec répétition espacée
+4. **English Teacher 3** — Générateur automatique de decks Anki avec NLP
+
+## 🌐 Déploiement GitHub Pages
+
+Le site est déjà configuré pour GitHub Pages :
+
+1. **Pousser sur GitHub** :
+```bash
+git remote add origin https://github.com/votre-username/portfolio.git
 git push -u origin main
 ```
 
-3. Dans les settings du dépôt GitHub → Pages, choisissez la branche `main` et le dossier `/ (root)`.
-4. Après quelques minutes, votre site sera disponible à `https://<votre-utilisateur>.github.io/portfolio/`.
+2. **Activer GitHub Pages** :
+   - Aller dans Settings → Pages
+   - Source : Deploy from a branch
+   - Branch : `main` / `/ (root)`
 
-## Suggestions d'améliorations
-- Ajouter une page par projet (MDX ou pages statiques).
-- Intégrer un formulaire de contact (Formspree ou Netlify Forms) ou une solution backend.
-- Ajouter des animations, optimiser images et performance, et configuré CI pour tests et builds.
+3. **Accéder au site** :
+   - URL : `https://votre-username.github.io/portfolio/`
 
-## Localisation / multi-langues
+## 🔧 Personnalisation
 
-Le template supporte maintenant la localisation via des fichiers séparés :
+### Ajouter un nouveau projet
 
-- `translations.json` : contient les clés de l'interface pour chaque langue (fr/en par défaut).
-- `projects.fr.json` et `projects.en.json` : listes de projets localisées. Le sélecteur de langue en-tête permet de basculer et le choix est mémorisé dans `localStorage`.
+1. **Mettre à jour les données** :
+```bash
+# Ajouter entrée dans projects.json, projects.fr.json, projects.en.json
+# Ajouter traductions dans translations.json
+```
 
-Pour ajouter une langue :
-1. Ajoutez une nouvelle entrée dans `translations.json` (par ex. `es` pour espagnol).
-2. Créez `projects.xx.json` contenant les titres et descriptions localisés.
-3. Ajoutez une option `<option value="xx">...</option>` dans le sélecteur `#lang-select` dans `index.html`.
+2. **Créer la page** :
+```bash
+# Créer projects/nouveau-projet.html
+# Suivre la structure des pages existantes
+```
+
+3. **Ajouter l'image** :
+```bash
+# Placer l'image dans images/
+# Référencer dans les fichiers JSON
+```
+
+### Modifier les traductions
+
+Éditer `translations.json` pour ajouter/modifier les textes dans les deux langues.
+
+### Changer le style
+
+Modifier `styles.css` — Les variables CSS facilitent la personnalisation des couleurs et typographies.
+
+## 🛠️ Technologies utilisées
+
+- **Frontend** : HTML5, CSS3, JavaScript ES6+
+- **Build** : Aucun (site statique)
+- **Hosting** : GitHub Pages
+- **Localisation** : JSON + localStorage
+- **Performance** : Images optimisées, code minifié
+
+## 📱 Compatibilité
+
+- ✅ Chrome, Firefox, Safari, Edge (versions récentes)
+- ✅ Responsive design (mobile, tablet, desktop)
+- ✅ GitHub Pages compatible
+- ✅ Chargement rapide (site statique)
+
+## 🤝 Contribution
+
+Pour suggestions ou améliorations :
+1. Fork du repository
+2. Créer une branche feature
+3. Commit des modifications
+4. Pull request avec description détaillée
+
+## 📄 Licence
+
+MIT License - voir fichier `LICENSE` pour les détails.
+
+---
+
+**Développé par Maxime Devillet** | Master en Sciences informatiques spécialisé en IA
 
 ## Photo de profil
 
