@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../images/profil.jpg" />
+  <title data-i18n="project_title_cgan">Conditional Generative Adversarial Networks (CGAN)</title>
+  <meta name="description" content="Implémentation et étude des réseaux adverses génératifs conditionnels pour la génération d'images contrôlée." />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../project-page.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="main-nav">
+        <a href="../index.html" class="btn-back">
+          <span data-i18n="btn_back">← Retour</span>
+        </a>
+      </nav>
+      <div class="controls">
+        <button class="lang-btn" data-lang="fr" aria-pressed="false" aria-label="Français">FR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">        
+      <article class="project-article">
+        <header class="project-header">
+          <img class="project-hero" src="../images/CGAN.png" alt="CGAN Project" />
+          <h1 data-i18n="project_title_cgan">Conditional Generative Adversarial Networks (CGAN)</h1>
+          <div class="project-actions">
+            <a href="../report/CGAN.pdf" class="btn btn-primary" target="_blank" data-i18n="view_report">Voir le rapport</a>
+            <a href="#" class="btn btn-secondary" data-i18n="view_code">Code source</a>
+          </div>
+        </header>
+
+        <div class="project-content">
+          <section class="project-section">
+                <h2 data-i18n="description">Description</h2>
+                <p data-i18n="project_description_cgan">
+                    Implémentation et étude des réseaux adverses génératifs conditionnels (CGAN) pour la génération 
+                    d'images contrôlée. Ce projet explore l'utilisation de conditions pour guider le processus de 
+                    génération et améliorer la qualité des images produites.
+                </p>
+            </section>
+
+            <section class="project-section">
+                <h2 data-i18n="technologies">Technologies</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">CUDA</span>
+                    <span class="tech-tag">Jupyter</span>
+                    <span class="tech-tag">NumPy</span>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2 data-i18n="architecture">Architecture</h2>
+                <ul>
+                    <li data-i18n="arch_cgan_1">Générateur conditionnel avec embedding des labels</li>
+                    <li data-i18n="arch_cgan_2">Discriminateur multi-classe avec projection</li>
+                    <li data-i18n="arch_cgan_3">Fonction de perte adversariale adaptée</li>
+                    <li data-i18n="arch_cgan_4">Système de métrique et d'évaluation</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2 data-i18n="features">Fonctionnalités</h2>
+                <ul>
+                    <li data-i18n="feature_cgan_1">Génération d'images conditionnelle par classe</li>
+                    <li data-i18n="feature_cgan_2">Contrôle de la diversité et de la qualité</li>
+                    <li data-i18n="feature_cgan_3">Évaluation quantitative (FID, IS)</li>
+                    <li data-i18n="feature_cgan_4">Visualisation de l'espace latent</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2 data-i18n="results">Résultats</h2>
+                <ul>
+                    <li data-i18n="result_cgan_1">Amélioration de 25% de la qualité FID par rapport au GAN standard</li>
+                    <li data-i18n="result_cgan_2">Contrôle précis de la génération par conditions</li>
+                    <li data-i18n="result_cgan_3">Convergence stable du training</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2 data-i18n="challenges">Défis</h2>
+                <ul>
+                    <li data-i18n="challenge_cgan_1">Équilibrage du training générateur/discriminateur</li>
+                    <li data-i18n="challenge_cgan_2">Mode collapse et diversité des échantillons</li>
+                    <li data-i18n="challenge_cgan_3">Optimisation des hyperparamètres</li>
+                </ul>
+            </section>
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

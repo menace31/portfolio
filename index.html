@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="images/profil.jpg" />
+  <title>Portfolio — Maxime Devillet</title>
+  <meta name="description" content="Portfolio professionel de Maxime — projets, compétences et contact." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="main-nav">
+        <a href="#about" data-i18n="nav_about">À propos</a>
+        <a href="#projects" data-i18n="nav_projects">Projets</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <button class="lang-btn" data-lang="fr" aria-pressed="false" aria-label="Français">FR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container brand">
+      <img src="images/profil.jpg" alt="Photo de profil de Maxime" id="profile-img" class="avatar" />
+      <div class="brand-text">
+        <h1 data-i18n="brand_name">Maxime Devillet</h1>
+        <p class="tagline" data-i18n="tagline">Master Science informatique spécialisation en IA</p>
+      </div>
+    </div>
+    <section id="about" class="container about">
+      <h2 data-i18n="about_title">À propos</h2>
+      <p data-i18n="about_text">Présentation courte — indiquez votre spécialité, années d'expérience, langues et technos favorites (ex: HTML, CSS, JavaScript, React, TypeScript).</p>
+    </section>
+
+    <section id="projects" class="container projects">
+      <h2 data-i18n="projects_title">Projets</h2>
+      
+      <!-- Projets d'étude -->
+      <div class="category-section">
+        <h3 data-i18n="category_study">Projets d'étude</h3>
+        <div class="projects-carousel">
+          <div class="carousel-nav prev">
+            <button id="carousel-prev-study" class="carousel-btn" disabled>‹</button>
+          </div>
+          <div class="carousel-nav next">
+            <button id="carousel-next-study" class="carousel-btn">›</button>
+          </div>
+          <div id="projects-grid-study" class="grid"></div>
+        </div>
+      </div>
+
+      <!-- Projets personnels -->
+      <div class="category-section">
+        <h3 data-i18n="category_personal">Projets personnels</h3>
+        <div class="projects-carousel">
+          <div class="carousel-nav prev">
+            <button id="carousel-prev-personal" class="carousel-btn" disabled>‹</button>
+          </div>
+          <div class="carousel-nav next">
+            <button id="carousel-next-personal" class="carousel-btn">›</button>
+          </div>
+          <div id="projects-grid-personal" class="grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2 data-i18n="contact_title">Contact</h2>
+      <p><span data-i18n="contact_email_text">Vous pouvez me contacter par email :</span> <a href="mailto:maxime.devillet01@gmail.com"> maxime.devillet01@gmail.com</a></p>
+      <p><span data-i18n="contact_github">Ou via mon profil GitHub : </span><a href="https://github.com/menace31"> github.com/menace31</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small data-i18n="copyright">&copy; 2026 Devillet Maxime — Template de portfolio</small>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

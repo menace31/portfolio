@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../images/profil.jpg" />
+  <title>KAPsule Temporelle — Maxime Devillet</title>
+  <meta name="description" content="Application web de cryptographie visuelle combinant stéganographie, chiffrement et authentification par reconnaissance caméra." />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../project-page.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="main-nav">
+        <a href="../index.html" class="btn-back">
+          <span data-i18n="btn_back">← Retour</span>
+        </a>
+      </nav>
+      <div class="controls">
+        <button class="lang-btn" data-lang="fr" aria-pressed="false" aria-label="Français">FR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">        
+      <article class="project-article">
+        <header class="project-header">
+          <img src="../images/Odoo.png" alt="KAPsule Temporelle" class="project-hero">
+          <h1 data-i18n="project_title_kapsule">KAPsule Temporelle</h1>
+          <p class="project-description" data-i18n="project_description_kapsule">
+            Application web de cryptographie visuelle combinant stéganographie, chiffrement et authentification par reconnaissance caméra.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/Emilevillette/BEST-24H-2025-Q1/tree/main" target="_blank" rel="noopener" class="btn">
+              <span data-i18n="view_code">Code source</span>
+            </a>
+          </div>
+        </header>
+
+        <section class="project-content">
+          <div class="project-section">
+            <h3 data-i18n="project_technologies">Technologies</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">YOLO v8</span>
+              <span class="tag">MediaPipe</span>
+              <span class="tag">DeepFace</span>
+              <span class="tag">SvelteKit</span>
+              <span class="tag">Cryptography</span>
+            </div>
+          </div>
+
+          <div class="project-section">
+            <h3>Vue d'ensemble du projet</h3>
+            <p>
+              <strong>KAPsule Temporelle</strong> est une application web innovante développée lors d'un hackathon de 24h. 
+              Elle combine cryptographie visuelle, stéganographie et authentification biométrique pour créer une 
+              "capsule temporelle" numérique sécurisée.
+            </p>
+            <p>
+              <strong>Ma contribution principale</strong> s'est concentrée sur le système de reconnaissance d'images, 
+              développant un module d'authentification multi-modal utilisant 4 modèles d'intelligence artificielle 
+              en temps réel.
+            </p>
+          </div>
+
+          <div class="project-section">
+            <h3>Architecture du Système</h3>
+            <div class="architecture-grid">
+              <div class="arch-item">
+                <h4>Backend FastAPI</h4>
+                <p>API REST avec endpoints pour l'encodage/décodage stéganographique et gestion de l'authentification caméra</p>
+              </div>
+              <div class="arch-item">
+                <h4>Frontend SvelteKit</h4>
+                <p>Interface utilisateur moderne avec upload de fichiers, sélection d'emojis-indices et visualisation des résultats</p>
+              </div>
+              <div class="arch-item">
+                <h4>Module Cryptographie</h4>
+                <p>Chiffrement Fernet (AES-128) + stéganographie LSB pour double protection des messages secrets</p>
+              </div>
+              <div class="arch-item">
+                <h4>Système IA Multi-Modal</h4>
+                <p>Intégration de YOLO v8, MediaPipe, et DeepFace pour authentification biométrique avancée</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-section">
+            <h3>Mon Système de Reconnaissance d'Images</h3>
+            <h4>Phase 1 : Détection d'Émotions (5 secondes)</h4>
+            <ul>
+              <li><strong>DeepFace</strong> : Analyse des expressions faciales en temps réel</li>
+              <li><strong>Défi</strong> : L'utilisateur doit montrer une émotion joyeuse pendant 5 secondes continues</li>
+              <li><strong>Optimisation</strong> : Système de temporisation pour éviter les faux positifs</li>
+            </ul>
+
+            <h4>Phase 2 : Défi "Affond avec Gobelet" (3 secondes)</h4>
+            <ul>
+              <li><strong>YOLO v8</strong> : Détection d'objets (tasse, bouteille, téléphone, télécommande)</li>
+              <li><strong>MediaPipe Pose</strong> : Reconnaissance de posture corporelle (33 landmarks)</li>
+              <li><strong>Algorithme personnalisé</strong> : Détection du geste de porter un objet vers le visage</li>
+              <li><strong>Normalisation</strong> : Adaptation selon la distance à la caméra</li>
+            </ul>
+          </div>
+
+          <div class="project-section">
+            <h3 data-i18n="project_features">Fonctionnalités</h3>
+            <ul>
+              <li><strong>Stéganographie LSB :</strong> Cachage invisible de messages dans les pixels d'images mèmes</li>
+              <li><strong>Chiffrement Fernet :</strong> Protection cryptographique avec clés uniques par message</li>
+              <li><strong>Authentification Multi-Niveaux :</strong> Combinaison émotion + pose + détection d'objets</li>
+              <li><strong>Emojis-Indices :</strong> Système d'aide-mémoire encodé dans l'image</li>
+              <li><strong>Optimisations Temps Réel :</strong> Traitement sur images 160x160 pour performances CPU</li>
+              <li><strong>Résistance aux Attaques :</strong> Impossible d'utiliser une photo ou vidéo pré-enregistrée</li>
+            </ul>
+          </div>
+
+          <div class="project-section">
+            <h3 data-i18n="project_challenges">Défis Techniques</h3>
+            <ul>
+              <li><strong>Intégration Multi-Modèles :</strong> Coordination de 4 modèles d'IA différents en parallèle</li>
+              <li><strong>Optimisation Performance :</strong> Fonctionnement temps réel sur CPU uniquement (pas de GPU requis)</li>
+              <li><strong>Détection de Pose Complexe :</strong> Algorithme personnalisé pour reconnaître le geste "affond"</li>
+              <li><strong>Gestion des États :</strong> Temporisation et tolérance de perte pour un UX fluide</li>
+              <li><strong>Sécurité Biométrique :</strong> Système résistant aux attaques de replay et spoofing</li>
+            </ul>
+          </div>
+
+          <div class="project-section">
+            <h3>Innovations Techniques</h3>
+            <p><strong>Authentification Comportementale :</strong></p>
+            <ul>
+              <li>Preuve de présence physique via mouvements coordonnés</li>
+              <li>Détection de vivacité par expressions faciales naturelles</li>
+              <li>Validation multi-sensorielle (visage + corps + objets)</li>
+            </ul>
+
+            <p><strong>Optimisations Algorithmiques :</strong></p>
+            <ul>
+              <li>Normalisation des distances selon la morphologie utilisateur</li>
+              <li>Système de seuils adaptatifs pour robustesse</li>
+              <li>Pipeline optimisé pour traitement 30+ FPS sur matériel standard</li>
+            </ul>
+          </div>
+
+          <div class="project-section">
+            <h3>Technologies d'IA Utilisées</h3>
+            <div class="tech-grid">
+              <div class="tech-item">
+                <h4>YOLO v8 Medium</h4>
+                <p>80 classes d'objets COCO, ~25M paramètres, détection temps réel</p>
+              </div>
+              <div class="tech-item">
+                <h4>MediaPipe Pose</h4>
+                <p>33 landmarks corporels 3D, architecture BlazePose, précision sub-pixel</p>
+              </div>
+              <div class="tech-item">
+                <h4>DeepFace</h4>
+                <p>7 émotions détectées, backend FER optimisé, analyse expressions faciales</p>
+              </div>
+              <div class="tech-item">
+                <h4>OpenCV</h4>
+                <p>Capture webcam, traitement vidéo, visualisation temps réel</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-section">
+            <h3>Résultats et Impact</h3>
+            <ul>
+              <li><strong>Performance :</strong> Authentification multi-modale en <5 secondes</li>
+              <li><strong>Sécurité :</strong> Résistance aux attaques de replay et spoofing</li>
+              <li><strong>Accessibilité :</strong> Fonctionne sur matériel standard (CPU uniquement)</li>
+              <li><strong>Innovation :</strong> Premier système combinant 4 modalités d'IA pour l'authentification</li>
+              <li><strong>Code Qualité :</strong> Architecture modulaire et optimisée pour déploiement</li>
+            </ul>
+          </div>
+
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small data-i18n="copyright">&copy; 2026 Devillet Maxime — Portfolio template</small>
+    </div>
+  </footer>
+</body>
+</html>
