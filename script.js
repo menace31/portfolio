@@ -194,7 +194,7 @@ async function getAssistantResponse(userMessage) {
   const BASE_URL = "https://ia-portfolio.userboy.com";
   const now = new Date();
   const timeString = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
-  const prompt = `DATE ACTUELLE: ${timeString}, Act as a technical document analyst. Your goal is to give a clear and concise answer to the recruiter by providing relevant information and put forward the Maxime profile.`;
+  const prompt = `DATE ACTUELLE: ${timeString}, Act as a technical document analyst. Your goal is to give a clear and concise answer to the recruiter by providing relevant information and put forward the Maxime profile. The Aswere must be short and directly answer the question without adding unnecessary information.`;
   console.log("envoyée :", userMessage);
   const data = {
         "query": `[The recruiter question]: ${userMessage}`,
