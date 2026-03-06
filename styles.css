@@ -241,3 +241,78 @@ body{
   .brand h1{font-size:1.5rem}
   .tagline{font-size:0.95rem}
 }
+
+/* Chat Button - Responsive Design */
+.chat-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #0891b2);
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  z-index: 999;
+  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chat-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(6, 182, 212, 0.6);
+}
+
+.chat-btn:active {
+  transform: scale(0.95);
+}
+
+.chat-icon-img {
+  width: 70%;
+  height: auto;
+  display: block;
+}
+
+/* Tablet - Taille moyenne */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .chat-btn {
+    width: 56px;
+    height: 56px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile - Petite taille */
+@media (max-width: 600px) {
+  .chat-btn {
+    width: 52px;
+    height: 52px;
+    bottom: 16px;
+    right: 16px;
+    font-size: 1.5rem;
+    box-shadow: 0 3px 12px rgba(6, 182, 212, 0.4);
+  }
+  
+  .chat-btn:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Très petit écran */
+@media (max-width: 400px) {
+  .chat-btn {
+    width: 48px;
+    height: 48px;
+    bottom: 12px;
+    right: 12px;
+    font-size: 1.4rem;
+  }
+}
