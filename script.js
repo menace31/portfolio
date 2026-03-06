@@ -178,3 +178,64 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 });
+
+function openChat() {
+  const chat = document.getElementById('chatWindow');
+  if (chat) {
+    if (chat.style.display === 'none' || chat.style.display === '') {
+      chat.style.display = 'flex';
+    } else {
+      chat.style.display = 'none';
+    }
+  }
+}
+
+async function getAssistantResponse(userMessage) {
+  const BASE_URL = "https://ia-portfolio.userboy.com";
+  const now = new Date();
+  const timeString = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const prompt = `DATE ACTUELLE: ${timeString}, Act as a technical document analyst. Your goal is to give a clear and concise answer to the recruiter by providing relevant information and put forward the Maxime profile.`;
+  console.log("envoyée :", userMessage);
+  const data = {
+        "query": `[The recruiter question]: ${userMessage}`,
+        "prompt": prompt
+    };
+  try {
+    console.log("Requête envoyée :", data);
+    const response = await fetch(`${BASE_URL}/chat`,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const result = await response.json();
+    return result.answer || "Désolé, je n'ai pas pu trouver une réponse à votre question.";
+  }catch (error) {    
+    console.error('Error fetching assistant response:', error);
+    return "Désolé, une erreur est survenue lors de la récupération de la réponse de l'assistant.";
+  }
+}
+
+window.sendQuery = async function() {
+    const input = document.getElementById('userInput');
+    const chatBody = document.getElementById('chatBody');
+    
+    if (input.value.trim() !== "") {
+        const userMsg = document.createElement('div');
+        userMsg.textContent = input.value;
+        userMsg.style.cssText = "background: var(--accent); color: #042024; padding: 8px; border-radius: 8px; align-self: flex-end; max-width: 80%;";
+        chatBody.appendChild(userMsg);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+    console.log("Requête envoyée :", input.value);
+    const assistantMsg = document.createElement('div');
+    assistantMsg.textContent = await getAssistantResponse(input.value);
+    assistantMsg.style.cssText = "background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; align-self: flex-start;";
+    chatBody.appendChild(assistantMsg);
+    chatBody.scrollTop = chatBody.scrollHeight;
+    input.value = "";
+};

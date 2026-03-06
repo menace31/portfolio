@@ -68,6 +68,28 @@
       </div>
     </section>
 
+    <button class="chat-btn" onclick="openChat()">💬</button>
+
+    <div id="chatWindow" class="card" style="display: none; position: fixed; bottom: 90px; right: 20px; width: 320px; height: 450px; z-index: 100; flex-direction: column; background: var(--surface); border: 1px solid rgba(255,255,255,0.1);">
+      
+      <div style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <span style="color: var(--accent); font-weight: bold;">Assistant RAG</span>
+        <button onclick="openChat()" style="background:none; border:none; color:var(--text); cursor:pointer; font-size: 1.2rem;">×</button>
+      </div>
+
+      <div id="chatBody" style="flex: 1; padding: 1rem; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem;">
+        <div style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; align-self: flex-start;">
+          Bonjour ! Posez votre question ici.
+        </div>
+      </div>
+
+      <div style="padding: 1rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 8px;">
+        <input type="text" id="userInput" placeholder="Votre message..." 
+              style="flex: 1; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 8px; color: var(--text); outline: none;">
+        <button class="btn" onclick="sendQuery()" style="padding: 8px 12px;">Envoyer</button>
+      </div>
+    </div>
+
     <section id="contact" class="container contact">
       <h2 data-i18n="contact_title">Contact</h2>
       <p><span data-i18n="contact_email_text">Vous pouvez me contacter par email :</span> <a href="mailto:maxime.devillet01@gmail.com"> maxime.devillet01@gmail.com</a></p>
