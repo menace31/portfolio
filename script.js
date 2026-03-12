@@ -195,7 +195,12 @@ async function getAssistantResponse(userMessage, onChunkReceived) {
   const now = new Date();
   const timeString = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
   
-  const prompt = `DATE ACTUELLE: ${timeString}, Act as a technical document analyst. Your goal is to give a clear and concise answer to the recruiter by providing relevant information and put forward the Maxime profile`;
+  const prompt = `DATE ACTUELLE: ${timeString}. 
+Tu es l'assistant de Maxime. Ta mission : répondre à la question du recruteur UNIQUEMENT en utilisant les faits extraits des documents.
+RÈGLES STRICTES :
+1. Si l'utilisateur ne pose pas une réelle question sur le profil de Maxime réponds lui poliment en lui demandant si il désire en savoir plus sur son parcours, ses compétences ou ses projets.
+2. Réponds directement à la question en une ou deux phrases maximum.
+3. Si l'information n'est pas dans les documents, réponds simplement : "Désolé, je n'ai pas cette information précise sur le profil de Maxime.`;
 
   const data = {
     "query": `[The recruiter question]: ${userMessage}`,
@@ -245,11 +250,34 @@ window.sendQuery = async function() {
         chatBody.appendChild(userMsg);
         chatBody.scrollTop = chatBody.scrollHeight;
     }
-    console.log("Requête envoyée :", input.value);
-    const assistantMsg = document.createElement('div');
-    assistantMsg.textContent = await getAssistantResponse(input.value);
-    assistantMsg.style.cssText = "background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; align-self: flex-start;";
-    chatBody.appendChild(assistantMsg);
-    chatBody.scrollTop = chatBody.scrollHeight;
+    const userInput = input.value;
     input.value = "";
+
+    const typingIndicator = document.createElement('div');
+    typingIndicator.className = 'typing-indicator';
+    typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+    chatBody.appendChild(typingIndicator);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    const assistantMsg = document.createElement('div');
+    assistantMsg.style.cssText = "background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; align-self: flex-start;";
+    let firstChunk = true;
+
+    console.log("Requête envoyée :", userInput);
+    await getAssistantResponse(userInput, (chunk) => {
+        if (firstChunk) {
+            typingIndicator.remove();
+            chatBody.appendChild(assistantMsg);
+            firstChunk = false;
+        }
+        assistantMsg.textContent += chunk;
+        chatBody.scrollTop = chatBody.scrollHeight;
+    });
+
+    if (firstChunk) {
+        typingIndicator.remove();
+        assistantMsg.textContent = "Désolé, une erreur est survenue.";
+        chatBody.appendChild(assistantMsg);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
 };
