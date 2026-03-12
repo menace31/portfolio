@@ -190,33 +190,47 @@ function openChat() {
   }
 }
 
-async function getAssistantResponse(userMessage) {
+async function getAssistantResponse(userMessage, onChunkReceived) {
   const BASE_URL = "https://ia-portfolio.userboy.com";
   const now = new Date();
   const timeString = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  
   const prompt = `DATE ACTUELLE: ${timeString}, Act as a technical document analyst. Your goal is to give a clear and concise answer to the recruiter by providing relevant information and put forward the Maxime profile`;
-  console.log("envoyée :", userMessage);
+
   const data = {
-        "query": `[The recruiter question]: ${userMessage}`,
-        "prompt": prompt
-    };
+    "query": `[The recruiter question]: ${userMessage}`,
+    "prompt": prompt
+  };
+
   try {
-    console.log("Requête envoyée :", data);
-    const response = await fetch(`${BASE_URL}/chat`,{
+    const response = await fetch(`${BASE_URL}/chat`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let fullText = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      const chunk = decoder.decode(value, { stream: true });
+      fullText += chunk;
+
+      if (onChunkReceived) {
+        onChunkReceived(chunk);
+      }
     }
-    const result = await response.json();
-    return result.answer || "Désolé, je n'ai pas pu trouver une réponse à votre question.";
-  }catch (error) {    
+
+    return fullText;
+
+  } catch (error) {
     console.error('Error fetching assistant response:', error);
-    return "Désolé, une erreur est survenue lors de la récupération de la réponse de l'assistant.";
+    return "Désolé, une erreur est survenue.";
   }
 }
 
